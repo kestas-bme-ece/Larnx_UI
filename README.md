@@ -11,7 +11,9 @@ https://nodejs.org/en/
 3) Within the applicatino directory, run: "npm install". This will update all neccessary dependancies. 
 
 4) Run application with: 
-WINDOWS
-$ .\node_modules\.bin\electron .
-iOS 
-$ ./node_modules/.bin/electron .
+
+WINDOWS)
+.\node_modules\.bin\electron .
+
+iOS)
+./node_modules/.bin/electron .
