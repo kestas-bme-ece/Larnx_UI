@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Larnx</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../Dependencies/vendor_sidebar/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../Dependencies/css/simple-sidebar.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Dependencies/font-awesome-4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">
+                    <img alt="Brand" src="../Resources/logoTC.png" width="66" height="57" href="#menu-toggle" id="menu-toggle">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a href="#">
+          Larnx Core
+        </a>
+      </li>
+      <li>
+        <a href="#">Import 2D</a>
+      </li>
+      <li>
+        <a href="#">Import 3D</a>
+      </li>
+      <li>
+        <a href="#">Import Hardware</a>
+      </li>
+      <li>
+        <a href="#">Process</a>
+      </li>
+      <li>
+        <a href="#">Manual</a>
+      </li>
+        <!--<li>-->
+            <!--<a class="fa fa-arrows-h" href="#menu-toggle" id="menu-toggle"></a>-->
+        <!--</li>-->
+    </ul>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <div class="container-fluid">
+      <h1>Larnx Core: Image Processing for Dysphagia</h1>
+        <p> We can use this whitespace for displaying all the image processing software goods :)
+        <p> Oh, and click the logo to toggle the side bar </p>
+      <!--<p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>-->
+      <!--<p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>-->
+      <!--<a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>-->
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Bootstrap core JavaScript -->
+
+<script src="../Dependencies/vendor_sidebar/jquery/jquery.min.js"></script>
+<script>window.jQuery = window.$ = require('jquery');</script>
+<script src="../Dependencies/vendor_sidebar/popper/popper.min.js"></script>
+<script src="../Dependencies/vendor_sidebar/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Menu Toggle Script -->
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
+<script>
+    $( document ).ready(function(){
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
+
+<script>require('../renderer.js')</script>
+<style>
+    .navbar-inverse{
+        color: #16181b;
+        background-color: #16181b;
+    }
+</style>
+</body>
+
+</html>
