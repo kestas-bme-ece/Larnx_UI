@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<script src="../renderer.js"></script>
+
 <head>
-
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -43,13 +43,13 @@
         </a>
       </li>
       <li>
-        <a href="#">Import 2D</a>
+        <a onclick="fileExplorer()" href="#">Import 2D</a>
       </li>
       <li>
-        <a href="#">Import 3D</a>
+        <a onclick="fileExplorer()" href="#">Import 3D</a>
       </li>
       <li>
-        <a href="#">Import Hardware</a>
+        <a onclick="fileExplorer()" href="#">Import Hardware</a>
       </li>
       <li>
         <a href="#">Process</a>
@@ -70,24 +70,45 @@
       <h1>Larnx Core: Image Processing for Dysphagia</h1>
         <p> We can use this whitespace for displaying all the image processing software goods :)
         <p> Oh, and click the logo to toggle the side bar </p>
+        <p id="textArea"></p>
+
+
+        <div class="row">
+            <div class="col"><img id="original" class="pull-left" src="../Resources/original.JPG"/><video src="" hidden="true"></video></div>
+            <div class="col"><img id="processed" class="pull-left" src="../Resources/processed.JPG"/><video src="" hidden="true"></video></div>
+        </div>
+
+
+        <!--</div>-->
+        <!--<div class="row">-->
+            <!--<img id="original"  class="img-responsive" src="../Resources/original.JPG">-->
+        <!--</div>-->
+        <!--<div class="row">-->
+            <!--<img id="processed"  class="img-responsive" src="../Resources/processed.JPG">-->
+        <!--</div>-->
+
+        <!--<div class="row">-->
+            <!--<div class="col-6" style="padding-left: 0px;  padding-right: 0px;">-->
+                <!--<img id="original"  class="img-responsive" src="../Resources/original.JPG">-->
+            <!--</div>-->
+            <!--<div class="col-6" style="padding-left: 0px;  padding-right: 0px;">-->
+                <!--<img id="processed"  class="img-responsive" src="../Resources/processed.JPG">-->
+            <!--</div>-->
+        <!--</div>-->
       <!--<p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>-->
       <!--<p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>-->
       <!--<a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>-->
     </div>
   </div>
-  <!-- /#page-content-wrapper -->
-
 </div>
-<!-- /#wrapper -->
 
-<!-- Bootstrap core JavaScript -->
+
 
 <script src="../Dependencies/vendor_sidebar/jquery/jquery.min.js"></script>
 <script>window.jQuery = window.$ = require('jquery');</script>
 <script src="../Dependencies/vendor_sidebar/popper/popper.min.js"></script>
 <script src="../Dependencies/vendor_sidebar/bootstrap/js/bootstrap.min.js"></script>
 
-<!-- Menu Toggle Script -->
 <script>
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
@@ -99,14 +120,17 @@
         $("#wrapper").toggleClass("toggled");
     });
 </script>
-
-<script>require('../renderer.js')</script>
+<script>
+    require('../renderer.js')
+</script>
 <style>
     .navbar-inverse{
-        color: #16181b;
-        background-color: #16181b;
+        color: #000;
+        background-color: #000;
     }
 </style>
+
+
 </body>
 
 </html>
