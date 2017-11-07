@@ -4,20 +4,21 @@
 <script src="../renderer.js"></script>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
 
-  <title>Larnx</title>
+      <title>Larnx</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="../Dependencies/vendor_sidebar/bootstrap/css/bootstrap.css" rel="stylesheet">
+      <!-- Bootstrap core CSS -->
+      <link href="../Dependencies/vendor_sidebar/bootstrap/css/bootstrap.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="../Dependencies/css/simple-sidebar.css" rel="stylesheet">
-    <link rel="stylesheet" href="../Dependencies/font-awesome-4.7.0/css/font-awesome.min.css">
-
+     <!-- Custom styles for this template -->
+     <link href="../Dependencies/css/simple-sidebar.css" rel="stylesheet">
+     <link rel="stylesheet" href="../Dependencies/font-awesome-4.7.0/css/font-awesome.min.css">
+     <!--<link rel="stylesheet" href="../Styles/video.css">-->
+    <link href="http://vjs.zencdn.net/6.2.8/video-js.css" rel="stylesheet">
 </head>
 
 <body>
@@ -43,23 +44,17 @@
         </a>
       </li>
       <li>
-        <a onclick="fileExplorer()" href="#">Import 2D</a>
+        <a onclick="fileExplorer('2d')" href="#">Import 2D</a>
       </li>
       <li>
-        <a onclick="fileExplorer()" href="#">Import 3D</a>
+        <a onclick="frameCapture()" href="#">Frame Capture</a>
       </li>
       <li>
-        <a onclick="fileExplorer()" href="#">Import Hardware</a>
+        <a onclick="execute()" href="#">Process</a>
       </li>
       <li>
-        <a href="#">Process</a>
+        <a href="https://github.com/Larnx">Manual</a>
       </li>
-      <li>
-        <a href="#">Manual</a>
-      </li>
-        <!--<li>-->
-            <!--<a class="fa fa-arrows-h" href="#menu-toggle" id="menu-toggle"></a>-->
-        <!--</li>-->
     </ul>
   </div>
   <!-- /#sidebar-wrapper -->
@@ -72,11 +67,33 @@
         <p> Oh, and click the logo to toggle the side bar </p>
         <p id="textArea"></p>
 
-
         <div class="row">
-            <div class="col"><img id="original" class="pull-left" src="../Resources/original.JPG"/><video src="" hidden="true"></video></div>
-            <div class="col"><img id="processed" class="pull-left" src="../Resources/processed.JPG"/><video src="" hidden="true"></video></div>
+            <!--<div class="col">-->
+                <div id="video-container">
+                    <video id="vid_original_header" class="video-js vjs-default-skin" controls preload="auto" width="640" height="640" poster="../Resources/g.jpg" data-video-path="">
+                        <source id="vid_original_mp4" src="" type='video/mp4'>
+                        <source id="vid_original_webm" src="" type="video/webm">
+                        <p class="vjs-no-js">
+                            To view this video please enable JavaScript, and consider upgrading to a web browser that
+                            <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                        </p>
+                    </video>
+                </div>
+            <!--</div>-->
+            <!--<div class="col">-->
+                <!--<img id="frame_capture" class="pull-right" src=""/>-->
+            <!--</div>-->
         </div>
+        <!--<div class="row">-->
+            <!--<div class="col">-->
+                <!--&lt;!&ndash;<video id="vid_pre" src="" hidden="true"></video>&ndash;&gt;-->
+                <!--<img id="original" class="pull-left" src="../Resources/original.JPG"/>-->
+            <!--</div>-->
+            <!--<div class="col">-->
+                <!--&lt;!&ndash;<video src="vid_post" hidden="true"></video>&ndash;&gt;-->
+                <!--<img id="processed" class="pull-left" src="../Resources/processed.JPG"/>-->
+            <!--</div>-->
+        <!--</div>-->
 
 
         <!--</div>-->
@@ -123,6 +140,31 @@
 <script>
     require('../renderer.js')
 </script>
+
+<script>
+//    const fs            = require("fs");
+//    function frameCapture(){
+//        var frame = captureVideoFrame('vid_original_header', 'png');
+//        fs.writeFile('temp.png',frame,'base64', function (error, data) {
+//            document.getElementById('frame_capture').setAttribute('src', frame.dataUri);
+//        });
+//
+//        var formData = new FormData();
+//        formData.append('file', frame.blob, 'frame_capture.' + frame.format);
+
+//        var request = new XMLHttpRequest();
+//        request.open('POST', '/api/upload', true);
+//        request.setRequestHeader('Content-Type', 'application/multipart/form-data; charset=UTF-8');
+//        request.send(formData);
+//    }
+</script>
+<script>
+    $( document ).ready(function(){
+        videoPlayer = videojs(document.getElementById('vid_original_header'), {}, function(){
+        });
+    });
+</script>
+<script src="../node_modules/capture-video-frame/capture-video-frame.js"></script>
 <style>
     .navbar-inverse{
         color: #000;
@@ -130,7 +172,8 @@
     }
 </style>
 
-
 </body>
 
 </html>
+
+
