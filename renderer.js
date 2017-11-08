@@ -25,8 +25,9 @@ function fileExplorer(import_request) {
 
             if ( path.extname(fileName)  == '.mp4' )
             {
-                document.getElementById("vid_original_mp4").src="file:///" + fileName;
-                document.getElementById("vid_original_header").setAttribute('data-video-path',fileName);
+                videoPlayer.reset();
+                //document.getElementById("vid_original_mp4").src="file:///" + fileName;
+                //document.getElementById("vid_original_header").setAttribute('data-video-path',fileName);
                 videoPlayer.src({type: "video/mp4", src: "file:///" + fileName});
             }
     });
@@ -48,6 +49,15 @@ function execute() {
     PROC.on('exit', function (data)
     {});
 }
+
+
+
+
+
+
+
+
+
 
 // Deprecated scripts, notes, trash. Please remove in <MASTER> branch
 
